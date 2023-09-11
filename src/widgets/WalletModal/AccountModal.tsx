@@ -13,6 +13,7 @@ interface Props {
   onDismiss?: () => void;
 }
 
+// eslint-disable-next-line react/require-default-props
 const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null }) => (
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <Text

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { TagProps } from "./types";
 import { StyledTag } from "./StyledTag";
 
@@ -19,6 +20,11 @@ const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => 
 Tag.defaultProps = {
   variant: "primary",
   outline: false,
+};
+
+Tag.propTypes = {
+  variant: PropTypes.string,
+  outline: PropTypes.bool,
 };
 
 export default Tag;

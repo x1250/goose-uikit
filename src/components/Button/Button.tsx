@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import getExternalLinkProps from "../../util/getExternalLinkProps";
 import StyledButton from "./StyledButton";
@@ -28,6 +29,20 @@ Button.defaultProps = {
   external: false,
   isLoading: false,
   disabled: false,
+  startIcon: null,
+  endIcon: null,
+  children: null,
+};
+
+Button.propTypes = {
+  variant: PropTypes.oneOf(Object.values(variants)),
+  size: PropTypes.oneOf(Object.values(sizes)),
+  external: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  disabled: PropTypes.bool,
+  startIcon: PropTypes.element,
+  endIcon: PropTypes.element,
+  children: PropTypes.node,
 };
 
 export default Button;

@@ -5,6 +5,8 @@ import { MenuEntry, LinkLabel } from "./MenuEntry";
 import { PushedProps } from "./types";
 import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../components/Svg";
 
+/* eslint-disable react/require-default-props */
+
 interface Props extends PushedProps {
   label: string;
   icon: React.ReactElement;
@@ -35,7 +37,7 @@ const Accordion: React.FC<Props> = ({
   pushNav,
   initialOpenState = false,
   children,
-  className,
+  className = "",
 }) => {
   const [isOpen, setIsOpen] = useState(initialOpenState);
 
@@ -65,5 +67,7 @@ const Accordion: React.FC<Props> = ({
     </Container>
   );
 };
+
+/* eslint-enable react/require-default-props */
 
 export default Accordion;

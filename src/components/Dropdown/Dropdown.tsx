@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { DropdownProps, PositionProps, Position } from "./types";
 
 const getLeft = ({ position }: PositionProps) => {
@@ -50,6 +51,14 @@ const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", childr
 };
 Dropdown.defaultProps = {
   position: "bottom",
+  children: null,
 };
+
+Dropdown.propTypes = {
+  target: PropTypes.element.isRequired,
+  position: PropTypes.oneOf(["top", "bottom", "top-right"]),
+  children: PropTypes.node,
+};
+
 
 export default Dropdown;
