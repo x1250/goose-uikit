@@ -14,8 +14,8 @@ export const sizes = {
   XXL: "xxl",
 };
 
-export type Tags = typeof tags[keyof typeof tags];
-export type Sizes = typeof sizes[keyof typeof sizes];
+export type Tags = (typeof tags)[keyof typeof tags];
+export type Sizes = (typeof sizes)[keyof typeof sizes];
 
 export interface HeadingProps {
   as?: Tags;
