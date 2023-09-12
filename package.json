@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/goosedefi/goose-uikit",
+  "repository": "https://github.com/x1250/goose-uikit",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.12.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@pancakeswap-libs/eslint-config-pancake": "1.0.1",
+    "@pancakeswap-libs/eslint-config-pancake": "git+https://github.com/x1250/eslint-config-pancake.git",
     "@rollup/plugin-typescript": "^8.1.1",
     "@storybook/addon-a11y": "^6.1.16",
     "@storybook/addon-actions": "^6.1.16",
@@ -58,10 +58,10 @@
     "jest-styled-components": "^7.0.3",
     "np": "^7.2.0",
     "prettier": "^2.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-is": "^17.0.1",
-    "react-router-dom": "^5.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "react-router-dom": "^6.15.0",
     "rollup": "^3.29.1",
     "styled-components": "^5.2.0",
     "themeprovider-storybook": "^1.6.4",
@@ -82,5 +82,6 @@
     "prop-types": "^15.8.1",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5"
-  }
+  },
+  "packageManager": "yarn@3.6.3"
 }
