@@ -1,4 +1,5 @@
+/// <reference types="react" />
 import { SpaceProps } from "styled-system";
-export declare type CardFooterProps = SpaceProps;
-declare const CardFooter: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, CardFooterProps, never>;
+export type CardFooterProps = SpaceProps;
+declare const CardFooter: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, CardFooterProps>>;
 export default CardFooter;

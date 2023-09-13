@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/Svg";
 import Flex from "../../components/Flex/Flex";
@@ -13,7 +13,7 @@ interface Props {
   href: string;
 }
 
-const StyledLink = styled(Link)`
+const linkStyles = css`
   display: flex;
   align-items: center;
   .mobile-icon {
@@ -29,6 +29,14 @@ const StyledLink = styled(Link)`
       display: block;
     }
   }
+`;
+
+const StyledLink = styled(Link)`
+  ${linkStyles}
+`;
+
+const StyledAnchor = styled.a`
+  ${linkStyles}
 `;
 
 const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
@@ -50,9 +58,9 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
         )}
       </MenuButton>
       {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Pancake home page">
+        <StyledAnchor href={href} aria-label="Pancake home page">
           {innerLogo}
-        </StyledLink>
+        </StyledAnchor>
       ) : (
         <StyledLink to={href} aria-label="Pancake home page">
           {innerLogo}

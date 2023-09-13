@@ -1,6 +1,6 @@
-import { DefaultTheme } from "styled-components";
+/// <reference types="react" />
 import { Variants } from "../Button/types";
-declare const StyledButtonMenu: import("styled-components").StyledComponent<"div", DefaultTheme, {
+declare const StyledButtonMenu: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {
     variant: Variants;
-}, never>;
+}>>;
 export default StyledButtonMenu;

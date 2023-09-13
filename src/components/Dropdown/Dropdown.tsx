@@ -45,19 +45,19 @@ const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", childr
   return (
     <Container>
       {target}
-      <DropdownContent position={position}>{children}</DropdownContent>
+      <DropdownContent position={position}>
+        {children}
+      </DropdownContent>
     </Container>
   );
 };
 Dropdown.defaultProps = {
   position: "bottom",
-  children: null,
 };
 
 Dropdown.propTypes = {
   target: PropTypes.element.isRequired,
   position: PropTypes.oneOf(["top", "bottom", "top-right"]),
-  children: PropTypes.node,
 };
 
 export default Dropdown;

@@ -6,7 +6,7 @@ import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 
-interface Props extends InjectedProps {
+export interface Props extends InjectedProps {
   title: string;
   hideCloseButton?: boolean;
   onBack?: () => void;

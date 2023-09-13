@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TagProps } from "./types";
+import { TagProps, variants } from "./types";
 import { StyledTag } from "./StyledTag";
 
 const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => (
   <StyledTag {...props}>
     {React.isValidElement(startIcon) &&
-      React.cloneElement(startIcon, {
+      React.cloneElement(startIcon as React.ReactElement, {
         mr: "0.5rem",
       })}
     {children}
     {React.isValidElement(endIcon) &&
-      React.cloneElement(endIcon, {
+      React.cloneElement(endIcon as React.ReactElement, {
         ml: "0.5rem",
       })}
   </StyledTag>
@@ -23,7 +23,7 @@ Tag.defaultProps = {
 };
 
 Tag.propTypes = {
-  variant: PropTypes.string,
+  variant: PropTypes.oneOf(Object.values(variants)),
   outline: PropTypes.bool,
 };
 

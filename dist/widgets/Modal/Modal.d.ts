@@ -1,6 +1,6 @@
 import React from "react";
 import { InjectedProps } from "./types";
-interface Props extends InjectedProps {
+export interface Props extends InjectedProps {
     title: string;
     hideCloseButton?: boolean;
     onBack?: () => void;

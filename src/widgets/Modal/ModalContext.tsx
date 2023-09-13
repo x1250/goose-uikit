@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import styled from "styled-components";
 import Overlay from "../../components/Overlay/Overlay";
 import { Handler } from "./types";
+import { Props as ModalProps } from "./Modal";
 
 interface ModalsContext {
   onPresent: (node: React.ReactNode, key?: string) => void;
@@ -30,7 +31,7 @@ export const Context = createContext<ModalsContext>({
 
 const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalNode, setModalNode] = useState<React.ReactNode>();
+  const [modalNode, setModalNode] = useState<React.ReactNode | React.ReactElement<ModalProps>>();
   const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true);
 
   const handlePresent = (node: React.ReactNode) => {
@@ -60,10 +61,12 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
       {isOpen && (
         <ModalWrapper>
           <Overlay show onClick={handleOverlayDismiss} />
-          {React.isValidElement(modalNode) &&
-            React.cloneElement(modalNode, {
-              onDismiss: handleDismiss,
-            })}
+          <>
+            {React.isValidElement<ModalProps>(modalNode) &&
+              React.cloneElement(modalNode, {
+                onDismiss: handleDismiss,
+              })}
+          </>
         </ModalWrapper>
       )}
       {children}

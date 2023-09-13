@@ -6,5 +6,7 @@ interface ModalsContext {
     setCloseOnOverlayClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export declare const Context: React.Context<ModalsContext>;
-declare const ModalProvider: React.FC;
+declare const ModalProvider: ({ children }: {
+    children: React.ReactNode;
+}) => React.JSX.Element;
 export default ModalProvider;

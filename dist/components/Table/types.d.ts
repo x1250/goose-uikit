@@ -1,4 +1,5 @@
-export declare type ColumnType<T> = {
+/// <reference types="react" />
+export type ColumnType<T extends DataType> = {
     name: string;
     label?: string;
     hidden?: boolean;
@@ -9,7 +10,7 @@ export declare type ColumnType<T> = {
     }) => React.ReactNode;
     headerRender?: HeaderRenderType;
 };
-export declare type ColumnStateType<T> = {
+export type ColumnStateType<T extends DataType> = {
     name: string;
     label: string;
     hidden: boolean;
@@ -20,10 +21,10 @@ export declare type ColumnStateType<T> = {
     };
     headerRender?: HeaderRenderType;
 };
-export declare type HeaderRenderType = ({ label }: {
+export type HeaderRenderType = ({ label }: {
     label: React.ReactNode;
 }) => React.ReactNode;
-export declare type HeaderType<T> = {
+export type HeaderType<T extends DataType> = {
     name: string;
     label?: string;
     hidden?: boolean;
@@ -34,18 +35,18 @@ export declare type HeaderType<T> = {
     sort?: ((a: RowType<T>, b: RowType<T>) => number) | undefined;
     render: () => React.ReactNode;
 };
-export declare type DataType = {
+export type DataType = {
     [key: string]: any;
 };
-export declare type ColumnByNamesType<T> = {
+export type ColumnByNamesType<T extends DataType> = {
     [key: string]: ColumnType<T>;
 };
-export declare type RenderFunctionType<T> = ({ value, row }: RenderFunctionArgsType<T>) => React.ReactNode | undefined;
-declare type RenderFunctionArgsType<T> = {
+export type RenderFunctionType<T> = ({ value, row }: RenderFunctionArgsType<T>) => React.ReactNode | undefined;
+type RenderFunctionArgsType<T> = {
     value: any;
     row: T;
 };
-export declare type ColumnByNameType<T> = Omit<Required<ColumnType<T>>, "name" | "sort">;
+export type ColumnByNameType<T extends DataType> = Omit<Required<ColumnType<T>>, "name" | "sort">;
 export interface RowType<T extends DataType> {
     id: number;
     cells: CellType[];
@@ -53,7 +54,7 @@ export interface RowType<T extends DataType> {
     selected?: boolean;
     original: T;
 }
-export declare type CellType = {
+export type CellType = {
     value: any;
     render: () => React.ReactNode;
 };
@@ -67,7 +68,7 @@ export interface UseTableTypeParams<T extends DataType> {
         filterOn?: boolean;
     };
 }
-export interface UseTablePropsType<T> {
+export interface UseTablePropsType<T extends DataType> {
     columns: ColumnType<T>[];
     data: T[];
     options?: {
@@ -76,14 +77,14 @@ export interface UseTablePropsType<T> {
         filter?: (row: RowType<T>[]) => RowType<T>[];
     };
 }
-export interface UseTableOptionsType<T> {
+export interface UseTableOptionsType<T extends DataType> {
     sortable?: boolean;
     selectable?: boolean;
     pagination?: boolean;
     sortColumn?: string;
     filter?: (row: RowType<T>[]) => RowType<T>[];
 }
-export interface UseTableReturnType<T> {
+export interface UseTableReturnType<T extends DataType> {
     headers: HeaderType<T>[];
     originalRows: RowType<T>[];
     rows: RowType<T>[];
@@ -96,7 +97,7 @@ export interface UseTableReturnType<T> {
     toggleAllState: boolean;
     pagination: PaginatorType;
 }
-declare type PaginatorType = {
+type PaginatorType = {
     nextPage: () => void;
     prevPage: () => void;
     page: number;
@@ -104,7 +105,7 @@ declare type PaginatorType = {
     canNext: boolean;
     canPrev: boolean;
 };
-export declare type TableState<T extends DataType> = {
+export type TableState<T extends DataType> = {
     columnsByName: ColumnByNamesType<T>;
     columns: ColumnStateType<T>[];
     rows: RowType<T>[];
@@ -116,7 +117,7 @@ export declare type TableState<T extends DataType> = {
     pagination: PaginatorType;
     paginationEnabled: boolean;
 };
-export declare type TableAction<T extends DataType> = {
+export type TableAction<T extends DataType> = {
     type: "TOGGLE_SORT";
     columnName: string;
     isAscOverride?: boolean;
