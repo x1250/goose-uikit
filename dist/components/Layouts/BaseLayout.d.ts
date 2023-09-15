@@ -1,4 +1,5 @@
 /// <reference types="react" />
+/// <reference types="react" />
 declare const GridLayout: import("styled-components").IStyledComponent<"web", {
     ref?: import("react").LegacyRef<HTMLDivElement> | undefined;
     key?: import("react").Key | null | undefined;
@@ -54,14 +55,18 @@ declare const GridLayout: import("styled-components").IStyledComponent<"web", {
     'aria-activedescendant'?: string | undefined;
     'aria-atomic'?: (boolean | "false" | "true") | undefined;
     'aria-autocomplete'?: "none" | "both" | "inline" | "list" | undefined;
+    'aria-braillelabel'?: string | undefined;
+    'aria-brailleroledescription'?: string | undefined;
     'aria-busy'?: (boolean | "false" | "true") | undefined;
     'aria-checked'?: boolean | "mixed" | "false" | "true" | undefined;
     'aria-colcount'?: number | undefined;
     'aria-colindex'?: number | undefined;
+    'aria-colindextext'?: string | undefined;
     'aria-colspan'?: number | undefined;
     'aria-controls'?: string | undefined;
     'aria-current'?: boolean | "page" | "false" | "true" | "time" | "step" | "location" | "date" | undefined;
     'aria-describedby'?: string | undefined;
+    'aria-description'?: string | undefined;
     'aria-details'?: string | undefined;
     'aria-disabled'?: (boolean | "false" | "true") | undefined;
     'aria-dropeffect'?: "none" | "copy" | "move" | "link" | "execute" | "popup" | undefined;
@@ -91,6 +96,7 @@ declare const GridLayout: import("styled-components").IStyledComponent<"web", {
     'aria-roledescription'?: string | undefined;
     'aria-rowcount'?: number | undefined;
     'aria-rowindex'?: number | undefined;
+    'aria-rowindextext'?: string | undefined;
     'aria-rowspan'?: number | undefined;
     'aria-selected'?: (boolean | "false" | "true") | undefined;
     'aria-setsize'?: number | undefined;
@@ -171,6 +177,8 @@ declare const GridLayout: import("styled-components").IStyledComponent<"web", {
     onProgressCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onRateChange?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onRateChangeCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
+    onResize?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
+    onResizeCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeeked?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeekedCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeeking?: import("react").ReactEventHandler<HTMLDivElement> | undefined;

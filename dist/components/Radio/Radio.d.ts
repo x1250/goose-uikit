@@ -1,6 +1,8 @@
 /// <reference types="react" />
+/// <reference types="react" />
 import { RadioProps } from "./types";
 declare const Radio: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<{
+    suppressHydrationWarning?: boolean | undefined;
     className?: string | undefined;
     color?: string | undefined;
     height?: string | number | undefined;
@@ -17,14 +19,18 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     'aria-activedescendant'?: string | undefined;
     'aria-atomic'?: (boolean | "false" | "true") | undefined;
     'aria-autocomplete'?: "none" | "both" | "inline" | "list" | undefined;
+    'aria-braillelabel'?: string | undefined;
+    'aria-brailleroledescription'?: string | undefined;
     'aria-busy'?: (boolean | "false" | "true") | undefined;
     'aria-checked'?: boolean | "mixed" | "false" | "true" | undefined;
     'aria-colcount'?: number | undefined;
     'aria-colindex'?: number | undefined;
+    'aria-colindextext'?: string | undefined;
     'aria-colspan'?: number | undefined;
     'aria-controls'?: string | undefined;
     'aria-current'?: boolean | "page" | "false" | "true" | "time" | "step" | "location" | "date" | undefined;
     'aria-describedby'?: string | undefined;
+    'aria-description'?: string | undefined;
     'aria-details'?: string | undefined;
     'aria-disabled'?: (boolean | "false" | "true") | undefined;
     'aria-dropeffect'?: "none" | "copy" | "move" | "link" | "execute" | "popup" | undefined;
@@ -54,6 +60,7 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     'aria-roledescription'?: string | undefined;
     'aria-rowcount'?: number | undefined;
     'aria-rowindex'?: number | undefined;
+    'aria-rowindextext'?: string | undefined;
     'aria-rowspan'?: number | undefined;
     'aria-selected'?: (boolean | "false" | "true") | undefined;
     'aria-setsize'?: number | undefined;
@@ -134,6 +141,8 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     onProgressCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onRateChange?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onRateChangeCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
+    onResize?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
+    onResizeCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeeked?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeekedCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeeking?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
@@ -232,20 +241,14 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     size?: number | undefined;
     multiple?: boolean | undefined;
     disabled?: boolean | undefined;
+    translate?: "no" | "yes" | undefined;
     form?: string | undefined;
+    pattern?: string | undefined;
     slot?: string | undefined;
     title?: string | undefined;
-    pattern?: string | undefined;
-    formAction?: string | undefined;
-    formEncType?: string | undefined;
-    formMethod?: string | undefined;
-    formNoValidate?: boolean | undefined;
-    formTarget?: string | undefined;
-    value?: string | number | readonly string[] | undefined;
     defaultChecked?: boolean | undefined;
     defaultValue?: string | number | readonly string[] | undefined;
     suppressContentEditableWarning?: boolean | undefined;
-    suppressHydrationWarning?: boolean | undefined;
     accessKey?: string | undefined;
     autoFocus?: boolean | undefined;
     contentEditable?: "inherit" | (boolean | "false" | "true") | undefined;
@@ -255,7 +258,6 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     nonce?: string | undefined;
     placeholder?: string | undefined;
     spellCheck?: (boolean | "false" | "true") | undefined;
-    translate?: "no" | "yes" | undefined;
     radioGroup?: string | undefined;
     about?: string | undefined;
     datatype?: string | undefined;
@@ -280,6 +282,12 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     unselectable?: "off" | "on" | undefined;
     inputMode?: "none" | "text" | "search" | "tel" | "url" | "email" | "numeric" | "decimal" | undefined;
     is?: string | undefined;
+    formAction?: string | undefined;
+    formEncType?: string | undefined;
+    formMethod?: string | undefined;
+    formNoValidate?: boolean | undefined;
+    formTarget?: string | undefined;
+    value?: string | number | readonly string[] | undefined;
     autoComplete?: string | undefined;
     maxLength?: number | undefined;
     minLength?: number | undefined;
@@ -290,7 +298,7 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     accept?: string | undefined;
     capture?: boolean | "user" | "environment" | undefined;
     checked?: boolean | undefined;
-    enterKeyHint?: "search" | "done" | "enter" | "go" | "next" | "previous" | "send" | undefined;
+    enterKeyHint?: "search" | "enter" | "done" | "go" | "next" | "previous" | "send" | undefined;
     list?: string | undefined;
     step?: string | number | undefined;
     ref?: ((instance: HTMLInputElement | null) => void) | import("react").RefObject<HTMLInputElement> | null | undefined;

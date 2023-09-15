@@ -7,7 +7,7 @@ it("renders correctly", () => {
   const { asFragment } = renderWithTheme(
     <Modal title="Title" onDismiss={noop}>
       body
-    </Modal>
+    </Modal>,
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>

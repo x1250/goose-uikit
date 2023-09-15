@@ -1,4 +1,5 @@
 /// <reference types="react" />
+/// <reference types="react" />
 export declare const Handle: import("styled-components").IStyledComponent<"web", {
     ref?: import("react").LegacyRef<HTMLDivElement> | undefined;
     key?: import("react").Key | null | undefined;
@@ -54,14 +55,18 @@ export declare const Handle: import("styled-components").IStyledComponent<"web",
     'aria-activedescendant'?: string | undefined;
     'aria-atomic'?: (boolean | "false" | "true") | undefined;
     'aria-autocomplete'?: "none" | "both" | "inline" | "list" | undefined;
+    'aria-braillelabel'?: string | undefined;
+    'aria-brailleroledescription'?: string | undefined;
     'aria-busy'?: (boolean | "false" | "true") | undefined;
     'aria-checked'?: boolean | "mixed" | "false" | "true" | undefined;
     'aria-colcount'?: number | undefined;
     'aria-colindex'?: number | undefined;
+    'aria-colindextext'?: string | undefined;
     'aria-colspan'?: number | undefined;
     'aria-controls'?: string | undefined;
     'aria-current'?: boolean | "page" | "false" | "true" | "time" | "step" | "location" | "date" | undefined;
     'aria-describedby'?: string | undefined;
+    'aria-description'?: string | undefined;
     'aria-details'?: string | undefined;
     'aria-disabled'?: (boolean | "false" | "true") | undefined;
     'aria-dropeffect'?: "none" | "copy" | "move" | "link" | "execute" | "popup" | undefined;
@@ -91,6 +96,7 @@ export declare const Handle: import("styled-components").IStyledComponent<"web",
     'aria-roledescription'?: string | undefined;
     'aria-rowcount'?: number | undefined;
     'aria-rowindex'?: number | undefined;
+    'aria-rowindextext'?: string | undefined;
     'aria-rowspan'?: number | undefined;
     'aria-selected'?: (boolean | "false" | "true") | undefined;
     'aria-setsize'?: number | undefined;
@@ -171,6 +177,8 @@ export declare const Handle: import("styled-components").IStyledComponent<"web",
     onProgressCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onRateChange?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onRateChangeCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
+    onResize?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
+    onResizeCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeeked?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeekedCapture?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
     onSeeking?: import("react").ReactEventHandler<HTMLDivElement> | undefined;
@@ -273,7 +281,7 @@ export declare const Input: import("styled-components").IStyledComponent<"web", 
     capture?: boolean | "user" | "environment" | undefined;
     checked?: boolean | undefined;
     disabled?: boolean | undefined;
-    enterKeyHint?: "search" | "done" | "enter" | "go" | "next" | "previous" | "send" | undefined;
+    enterKeyHint?: "search" | "enter" | "done" | "go" | "next" | "previous" | "send" | undefined;
     form?: string | undefined;
     formAction?: string | undefined;
     formEncType?: string | undefined;
@@ -350,14 +358,18 @@ export declare const Input: import("styled-components").IStyledComponent<"web", 
     'aria-activedescendant'?: string | undefined;
     'aria-atomic'?: (boolean | "false" | "true") | undefined;
     'aria-autocomplete'?: "none" | "both" | "inline" | "list" | undefined;
+    'aria-braillelabel'?: string | undefined;
+    'aria-brailleroledescription'?: string | undefined;
     'aria-busy'?: (boolean | "false" | "true") | undefined;
     'aria-checked'?: boolean | "mixed" | "false" | "true" | undefined;
     'aria-colcount'?: number | undefined;
     'aria-colindex'?: number | undefined;
+    'aria-colindextext'?: string | undefined;
     'aria-colspan'?: number | undefined;
     'aria-controls'?: string | undefined;
     'aria-current'?: boolean | "page" | "false" | "true" | "time" | "step" | "location" | "date" | undefined;
     'aria-describedby'?: string | undefined;
+    'aria-description'?: string | undefined;
     'aria-details'?: string | undefined;
     'aria-disabled'?: (boolean | "false" | "true") | undefined;
     'aria-dropeffect'?: "none" | "copy" | "move" | "link" | "execute" | "popup" | undefined;
@@ -387,6 +399,7 @@ export declare const Input: import("styled-components").IStyledComponent<"web", 
     'aria-roledescription'?: string | undefined;
     'aria-rowcount'?: number | undefined;
     'aria-rowindex'?: number | undefined;
+    'aria-rowindextext'?: string | undefined;
     'aria-rowspan'?: number | undefined;
     'aria-selected'?: (boolean | "false" | "true") | undefined;
     'aria-setsize'?: number | undefined;
@@ -466,6 +479,8 @@ export declare const Input: import("styled-components").IStyledComponent<"web", 
     onProgressCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onRateChange?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onRateChangeCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
+    onResize?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
+    onResizeCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeeked?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeekedCapture?: import("react").ReactEventHandler<HTMLInputElement> | undefined;
     onSeeking?: import("react").ReactEventHandler<HTMLInputElement> | undefined;

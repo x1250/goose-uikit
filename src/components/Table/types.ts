@@ -1,3 +1,5 @@
+import React from "react";
+
 export type ColumnType<T extends DataType> = {
   name: string;
   label?: string;

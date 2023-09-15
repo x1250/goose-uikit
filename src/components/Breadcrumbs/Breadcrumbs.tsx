@@ -60,12 +60,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ separator = DefaultSeparator,
 
   return (
     <StyledBreadcrumbs>
-      {Array.isArray(items) ? items.map((item, index) => (
-        <li key={`child-${index}`}>{item}</li>
-      )) : null}
+      {Array.isArray(items) ? items.map((item, index) => <li key={`child-${index}`}>{item}</li>) : null}
     </StyledBreadcrumbs>
   );
-  
 };
 
 export default Breadcrumbs;

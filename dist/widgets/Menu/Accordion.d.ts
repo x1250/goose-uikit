@@ -5,6 +5,7 @@ interface Props extends PushedProps {
     icon: React.ReactElement;
     initialOpenState?: boolean;
     className?: string;
+    children?: React.ReactNode;
 }
 declare const Accordion: React.FC<Props>;
 export default Accordion;

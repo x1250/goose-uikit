@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Login } from "../WalletModal/types";
 export interface LangType {
     code: string;
@@ -46,4 +47,5 @@ export interface NavProps extends PanelProps {
     login: Login;
     profile?: Profile;
     logout: () => void;
+    children?: React.ReactNode;
 }

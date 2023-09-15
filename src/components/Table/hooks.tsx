@@ -19,7 +19,7 @@ import { byTextAscending, byTextDescending } from "./utils";
 const sortByColumn = <T extends DataType>(
   data: RowType<T>[],
   sortColumn: string,
-  columns: ColumnStateType<T>[]
+  columns: ColumnStateType<T>[],
 ): RowType<T>[] => {
   let isAscending = null;
   let sortedRows: RowType<T>[] = [...data];
@@ -297,7 +297,7 @@ export const makeRender = <T extends DataType>(
   value: any,
   render: (({ value, row }: { value: any; row: T }) => ReactNode) | undefined,
 
-  row: T
+  row: T,
 ): (() => React.ReactNode) => {
   return render ? () => render({ row, value }) : () => value;
 };
@@ -309,7 +309,7 @@ const makeHeaderRender = (label: string, render?: HeaderRenderType) => {
 export const useTable = <T extends DataType>(
   columns: ColumnType<T>[],
   data: T[],
-  options?: UseTableOptionsType<T>
+  options?: UseTableOptionsType<T>,
 ): UseTableReturnType<T> => {
   const columnsWithSorting: ColumnStateType<T>[] = useMemo(
     () =>
@@ -325,7 +325,7 @@ export const useTable = <T extends DataType>(
           },
         };
       }),
-    [columns]
+    [columns],
   );
   const columnsByName = useMemo(() => getColumnsByName(columnsWithSorting), [columnsWithSorting]);
 
