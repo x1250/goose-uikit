@@ -1,5 +1,5 @@
 import styled, { DefaultTheme } from "styled-components";
-import { space } from "styled-system";
+import { space } from "../../util/CSSUtils";
 import { ButtonProps, ButtonThemeVariant, variants } from "./types";
 
 type ThemedProps = {

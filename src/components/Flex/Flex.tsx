@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexbox, space } from "styled-system";
+import { flexbox, space } from "../../util/CSSUtils";
 import { FlexProps } from "./types";
 
 const Flex = styled.div<FlexProps>`

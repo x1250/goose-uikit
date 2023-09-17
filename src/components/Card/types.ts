@@ -1,6 +1,6 @@
 import React from "react";
 import { HTMLAttributes } from "react";
-import { SpaceProps } from "styled-system";
+import { SpaceProps } from "../../util/CSSUtilsTypes";
 import { Colors } from "../../theme/types";
 
 export interface CardRibbonProps {

@@ -2,7 +2,6 @@
 
 var React = require('react');
 var styled = require('styled-components');
-var styledSystem = require('styled-system');
 var get = require('lodash/get');
 var PropTypes = require('prop-types');
 var noop = require('lodash/noop');
@@ -70,6 +69,22 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
+var space = function (props) {
+    var mt = props.mt, mb = props.mb, ml = props.ml, mr = props.mr, mx = props.mx, m = props.m, p = props.p, pt = props.pt, pb = props.pb, pl = props.pl, pr = props.pr;
+    var toCSSValue = function (value) {
+        return typeof value === "number" ? "".concat(value, "px") : value;
+    };
+    return "\n    ".concat(mt !== undefined ? "margin-top: ".concat(toCSSValue(mt), ";") : "", "\n    ").concat(mb !== undefined ? "margin-bottom: ".concat(toCSSValue(mb), ";") : "", "\n    ").concat(ml !== undefined ? "margin-left: ".concat(toCSSValue(ml), ";") : "", "\n    ").concat(mr !== undefined ? "margin-right: ".concat(toCSSValue(mr), ";") : "", "\n    ").concat(mx !== undefined ? "margin-left: ".concat(toCSSValue(mx), "; margin-right: ").concat(toCSSValue(mx), ";") : "", "\n    ").concat(m !== undefined ? "margin: ".concat(toCSSValue(m), ";") : "", "\n    ").concat(p !== undefined ? "padding: ".concat(toCSSValue(p), ";") : "", "\n    ").concat(pt !== undefined ? "padding-top: ".concat(toCSSValue(pt), ";") : "", "\n    ").concat(pb !== undefined ? "padding-bottom: ".concat(toCSSValue(pb), ";") : "", "\n    ").concat(pl !== undefined ? "padding-left: ".concat(toCSSValue(pl), ";") : "", "\n    ").concat(pr !== undefined ? "padding-right: ".concat(toCSSValue(pr), ";") : "", "\n  ");
+};
+var flexbox = function (props) {
+    var flexDirection = props.flexDirection, alignItems = props.alignItems, justifyContent = props.justifyContent, flexWrap = props.flexWrap, flexGrow = props.flexGrow;
+    return "\n    ".concat(flexDirection ? "flex-direction: ".concat(flexDirection, ";") : "", "\n    ").concat(alignItems ? "align-items: ".concat(alignItems, ";") : "", "\n    ").concat(justifyContent ? "justify-content: ".concat(justifyContent, ";") : "", "\n    ").concat(flexWrap ? "flex-wrap: ".concat(flexWrap, ";") : "", "\n    ").concat(flexGrow !== undefined ? "flex-grow: ".concat(flexGrow, ";") : "", "\n  ");
+};
+var layout = function (props) {
+    var width = props.width, height = props.height, maxWidth = props.maxWidth, minWidth = props.minWidth;
+    return "\n    ".concat(width !== undefined ? "width: ".concat(width, "px;") : "", "\n    ").concat(height !== undefined ? "height: ".concat(height, "px;") : "", "\n    ").concat(maxWidth !== undefined ? "max-width: ".concat(maxWidth, "px;") : "", "\n    ").concat(minWidth !== undefined ? "min-width: ".concat(minWidth, "px;") : "", "\n  ");
+};
+
 var getThemeValue = function (path, fallback) {
     return function (theme) {
         return get(theme, path, fallback);
@@ -84,7 +99,7 @@ var Svg = styled.svg(templateObject_3$9 || (templateObject_3$9 = __makeTemplateO
 }, function (_a) {
     var spin = _a.spin;
     return spin && spinStyle;
-}, styledSystem.space);
+}, space);
 Svg.defaultProps = {
     color: "text",
     width: "20px",
@@ -127,7 +142,7 @@ var Text = styled.div(templateObject_1$I || (templateObject_1$I = __makeTemplate
 }, function (_a) {
     var textTransform = _a.textTransform;
     return textTransform && "text-transform: ".concat(textTransform, ";");
-}, styledSystem.space);
+}, space);
 Text.defaultProps = {
     color: "text",
     small: false,
@@ -188,7 +203,7 @@ var StyledButton = styled.button(templateObject_1$H || (templateObject_1$H = __m
 }, getButtonVariantProp("backgroundHover"), getButtonVariantProp("borderColorHover"), function (_a) {
     var theme = _a.theme;
     return theme.colors.secondary;
-}, getButtonVariantProp("backgroundActive"), getButtonVariantProp("boxShadowActive"), getDisabledStyles, removePointerEvents, styledSystem.space);
+}, getButtonVariantProp("backgroundActive"), getButtonVariantProp("boxShadowActive"), getDisabledStyles, removePointerEvents, space);
 StyledButton.defaultProps = {
     fullWidth: false,
     type: "button",
@@ -549,7 +564,7 @@ var Icon$x = function (props) {
         React.createElement("path", { d: "M4.47 20.9999H19.53C21.07 20.9999 22.03 19.3299 21.26 17.9999L13.73 4.98993C12.96 3.65993 11.04 3.65993 10.27 4.98993L2.74 17.9999C1.97 19.3299 2.93 20.9999 4.47 20.9999ZM12 13.9999C11.45 13.9999 11 13.5499 11 12.9999V10.9999C11 10.4499 11.45 9.99993 12 9.99993C12.55 9.99993 13 10.4499 13 10.9999V12.9999C13 13.5499 12.55 13.9999 12 13.9999ZM13 17.9999H11V15.9999H13V17.9999Z" })));
 };
 
-var Flex = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  ", "\n  ", "\n"], ["\n  display: flex;\n  ", "\n  ", "\n"])), styledSystem.flexbox, styledSystem.space);
+var Flex = styled.div(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  ", "\n  ", "\n"], ["\n  display: flex;\n  ", "\n  ", "\n"])), flexbox, space);
 var templateObject_1$F;
 
 var variants$1 = {
@@ -626,7 +641,7 @@ var Separator = styled.div(templateObject_1$D || (templateObject_1$D = __makeTem
 var StyledBreadcrumbs = styled.ul(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  ", "\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textDisabled;
-}, styledSystem.space);
+}, space);
 var insertSeparators = function (items, separator) {
     return items.reduce(function (accum, item, index) {
         if (React.isValidElement(item)) {
@@ -707,7 +722,7 @@ var StyledCard = styled.div(templateObject_1$A || (templateObject_1$A = __makeTe
 }, getBoxShadow$1, function (_a) {
     var theme = _a.theme, isDisabled = _a.isDisabled;
     return theme.colors[isDisabled ? "textDisabled" : "text"];
-}, styledSystem.space);
+}, space);
 StyledCard.defaultProps = {
     isActive: false,
     isSuccess: false,
@@ -723,16 +738,16 @@ var Card = function (_a) {
         children));
 };
 
-var CardBody = styled.div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
+var CardBody = styled.div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), space);
 CardBody.defaultProps = {
     p: "24px",
 };
 var templateObject_1$z;
 
-var CardHeader = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  background: ", ";\n\n  ", "\n"], ["\n  background: ", ";\n\n  ", "\n"])), function (_a) {
+var CardHeader = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  background: ", ";\n  ", "\n"], ["\n  background: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.cardHeaderBackground;
-}, styledSystem.space);
+}, space);
 CardHeader.defaultProps = {
     p: "24px",
 };
@@ -741,7 +756,7 @@ var templateObject_1$y;
 var CardFooter = styled.div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.borderColor;
-}, styledSystem.space);
+}, space);
 CardFooter.defaultProps = {
     p: "24px",
 };
@@ -897,7 +912,7 @@ var Wrapper$1 = styled.div(templateObject_1$s || (templateObject_1$s = __makeTem
 }, function (_a) {
     var width = _a.width, height = _a.height, responsive = _a.responsive;
     return (responsive ? (height / width) * 100 : 0);
-}, styledSystem.space);
+}, space);
 var templateObject_1$s;
 
 var BackgroundImage = function (_a) {
@@ -1066,7 +1081,7 @@ var Radio = styled.input.attrs({ type: "radio" })(templateObject_1$n || (templat
 }, function (_a) {
     var theme = _a.theme;
     return theme.radio.handleBackground;
-}, styledSystem.space);
+}, space);
 Radio.defaultProps = {
     scale: scales.MD,
     m: 0,
@@ -1208,7 +1223,7 @@ var Root = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplate
 }, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return (variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small);
-}, styledSystem.layout, styledSystem.space);
+}, layout, space);
 var Pulse = styled(Root)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
 var Waves = styled(Root)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {

@@ -1,4 +1,4 @@
-import { LayoutProps, SpaceProps } from "styled-system";
+import { LayoutProps, SpaceProps } from "../../util/CSSUtilsTypes";
 export declare const animation: {
     readonly WAVES: "waves";
     readonly PULSE: "pulse";

@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { Link, LinkProps } from "react-router-dom";
-import { SpaceProps } from "styled-system";
+import { SpaceProps } from "../../util/CSSUtilsTypes";
 
 export const sizes = {
   SM: "sm",

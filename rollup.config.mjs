@@ -11,7 +11,6 @@ export default {
     'react', 
     'react-dom', 
     'styled-components', 
-    'styled-system',
     'prop-types',
     'lodash/noop',
     'lodash/debounce',

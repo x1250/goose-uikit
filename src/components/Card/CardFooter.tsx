@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
+import { space } from "../../util/CSSUtils";
+import { SpaceProps } from "../../util/CSSUtilsTypes";
 
 export type CardFooterProps = SpaceProps;
 

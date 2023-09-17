@@ -1,4 +1,4 @@
-import { SpaceProps } from "styled-system";
+import { SpaceProps } from "../../util/CSSUtilsTypes";
 export declare const scales: {
     readonly SM: "sm";
     readonly MD: "md";

@@ -1,3 +1,3 @@
-import { FlexboxProps, SpaceProps } from "styled-system";
+import { FlexboxProps, SpaceProps } from "../../util/CSSUtilsTypes";
 export interface FlexProps extends FlexboxProps, SpaceProps {
 }

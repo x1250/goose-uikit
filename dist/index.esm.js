@@ -1,6 +1,5 @@
 import React, { Children, isValidElement, cloneElement, useRef, useEffect, useState, useMemo, useReducer, useCallback, createContext, useContext } from 'react';
 import styled, { keyframes, css, useTheme, createGlobalStyle } from 'styled-components';
-import { space, flexbox, layout } from 'styled-system';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
@@ -66,6 +65,22 @@ function __makeTemplateObject(cooked, raw) {
 typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
     var e = new Error(message);
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+
+var space = function (props) {
+    var mt = props.mt, mb = props.mb, ml = props.ml, mr = props.mr, mx = props.mx, m = props.m, p = props.p, pt = props.pt, pb = props.pb, pl = props.pl, pr = props.pr;
+    var toCSSValue = function (value) {
+        return typeof value === "number" ? "".concat(value, "px") : value;
+    };
+    return "\n    ".concat(mt !== undefined ? "margin-top: ".concat(toCSSValue(mt), ";") : "", "\n    ").concat(mb !== undefined ? "margin-bottom: ".concat(toCSSValue(mb), ";") : "", "\n    ").concat(ml !== undefined ? "margin-left: ".concat(toCSSValue(ml), ";") : "", "\n    ").concat(mr !== undefined ? "margin-right: ".concat(toCSSValue(mr), ";") : "", "\n    ").concat(mx !== undefined ? "margin-left: ".concat(toCSSValue(mx), "; margin-right: ").concat(toCSSValue(mx), ";") : "", "\n    ").concat(m !== undefined ? "margin: ".concat(toCSSValue(m), ";") : "", "\n    ").concat(p !== undefined ? "padding: ".concat(toCSSValue(p), ";") : "", "\n    ").concat(pt !== undefined ? "padding-top: ".concat(toCSSValue(pt), ";") : "", "\n    ").concat(pb !== undefined ? "padding-bottom: ".concat(toCSSValue(pb), ";") : "", "\n    ").concat(pl !== undefined ? "padding-left: ".concat(toCSSValue(pl), ";") : "", "\n    ").concat(pr !== undefined ? "padding-right: ".concat(toCSSValue(pr), ";") : "", "\n  ");
+};
+var flexbox = function (props) {
+    var flexDirection = props.flexDirection, alignItems = props.alignItems, justifyContent = props.justifyContent, flexWrap = props.flexWrap, flexGrow = props.flexGrow;
+    return "\n    ".concat(flexDirection ? "flex-direction: ".concat(flexDirection, ";") : "", "\n    ").concat(alignItems ? "align-items: ".concat(alignItems, ";") : "", "\n    ").concat(justifyContent ? "justify-content: ".concat(justifyContent, ";") : "", "\n    ").concat(flexWrap ? "flex-wrap: ".concat(flexWrap, ";") : "", "\n    ").concat(flexGrow !== undefined ? "flex-grow: ".concat(flexGrow, ";") : "", "\n  ");
+};
+var layout = function (props) {
+    var width = props.width, height = props.height, maxWidth = props.maxWidth, minWidth = props.minWidth;
+    return "\n    ".concat(width !== undefined ? "width: ".concat(width, "px;") : "", "\n    ").concat(height !== undefined ? "height: ".concat(height, "px;") : "", "\n    ").concat(maxWidth !== undefined ? "max-width: ".concat(maxWidth, "px;") : "", "\n    ").concat(minWidth !== undefined ? "min-width: ".concat(minWidth, "px;") : "", "\n  ");
 };
 
 var getThemeValue = function (path, fallback) {
@@ -727,7 +742,7 @@ CardBody.defaultProps = {
 };
 var templateObject_1$z;
 
-var CardHeader = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  background: ", ";\n\n  ", "\n"], ["\n  background: ", ";\n\n  ", "\n"])), function (_a) {
+var CardHeader = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  background: ", ";\n  ", "\n"], ["\n  background: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.cardHeaderBackground;
 }, space);

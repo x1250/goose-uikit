@@ -2,10 +2,11 @@
 /// <reference types="react" />
 import { RadioProps } from "./types";
 declare const Radio: import("styled-components").IStyledComponent<"web", import("styled-components/dist/types").Substitute<{
+    width?: string | number | undefined;
+    height?: string | number | undefined;
     suppressHydrationWarning?: boolean | undefined;
     className?: string | undefined;
     color?: string | undefined;
-    height?: string | number | undefined;
     id?: string | undefined;
     lang?: string | undefined;
     max?: string | number | undefined;
@@ -13,7 +14,6 @@ declare const Radio: import("styled-components").IStyledComponent<"web", import(
     name?: string | undefined;
     style?: import("react").CSSProperties | undefined;
     type?: import("react").HTMLInputTypeAttribute | undefined;
-    width?: string | number | undefined;
     role?: import("react").AriaRole | undefined;
     tabIndex?: number | undefined;
     'aria-activedescendant'?: string | undefined;

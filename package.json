@@ -18,7 +18,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "release": "yarn build && np",
-    "postinstall": "if [ -d .git ]; then ./node_modules/.bin/husky install; fi;",
+    "postinstall": "node postinstall.js",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
@@ -79,7 +79,6 @@
     "prop-types": "^15.8.1",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.0.8",
-    "styled-system": "^5.1.5",
     "stylis": "^4.3.0"
   },
   "packageManager": "yarn@3.6.3"

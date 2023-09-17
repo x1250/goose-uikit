@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SpaceProps } from "styled-system";
+import { SpaceProps } from "../../util/CSSUtilsTypes";
 export declare const variants: {
     readonly PRIMARY: "primary";
     readonly SECONDARY: "secondary";

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Children, isValidElement, ReactNode } from "react";
 import styled from "styled-components";
-import { space } from "styled-system";
+import { space } from "../../util/CSSUtils";
 import ChevronRightIcon from "../Svg/Icons/ChevronRight";
 import { BreadcrumbsProps } from "./types";
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { space } from "styled-system";
+import { space } from "../../util/CSSUtils";
 import { RadioProps, scales } from "./types";
 
 const getScale = ({ scale }: RadioProps) => {
