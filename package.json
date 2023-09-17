@@ -18,7 +18,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "release": "yarn build && np",
-    "postinstall": "husky install",
+    "postinstall": "./node_modules/.bin/husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
