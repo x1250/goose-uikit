@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { ButtonProps, Sizes, variants } from "../Button/types";
 export type ButtonMenuItemProps = {
     isActive?: boolean;

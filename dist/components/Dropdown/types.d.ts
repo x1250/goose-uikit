@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export type Position = "top" | "top-right" | "bottom";
 export interface PositionProps {
     position?: Position;
